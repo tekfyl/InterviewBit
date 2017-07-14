@@ -1,3 +1,3 @@
-# InterviewBit
+# Interview Bit
 
-Contains solutions to some of the problems realted to Data Structures and Algorithm, I solved on Interview Bit.
+Contains attempts to some of the problems on this really cool website.
