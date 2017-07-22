@@ -1,36 +1,41 @@
-#include <bits/stdc++.h>
-
-#define all(c) c.begin(), c.end()
-#define ll long long
-#define pb push_back
-#define vi vector<int>
-#define vll vector<ll>
-#define vvi vector< vi >
-#define vvl vector< vector<ll> >
-#define mk make_pair
-#define ii pair <int, int>
-#define LL pair <ll, ll>
-#define fi first
-#define se second
-#define mx max_element
-#define mn min_element
-#define swap(a,b) a=a^b,b=a^b,a=a^b
-#define rep(i,n)    for(__typeof(n) i = 0; i < n; i++)
-#define rep1(i,n)   for(__typeof(n) i = 1; i <= n; i++)
-double tick(){static clock_t oldt,newt=clock();double diff=(newt-oldt)/CLOCKS_PER_SEC;oldt=newt;return diff;}
-using namespace std;
-
-ll inf=1e18+1;  
-ll N; 
-vll v,q,st;
-ll in=0,i=0,j=0,k=0,ans=0;
-ll n=0,m=0,t=0,v1=0,v2=0;
-char c; string s;
-
-int main(){
-    ios_base::sync_with_stdio(false);
+/**
+ * Definition for binary tree
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+int Solution::t2Sum(TreeNode* A, int B) {
     
-    //cout<<"\n"<<"Execution time : "<<tick()<<"\n";
-    return 0;
+    /**
+ * Definition for binary tree
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+    stack<TreeNode*> st;
+    map<int,int> hash;
+    TreeNode *curr=A;
+    int done = 0;
+    while(!done){
+        if(curr != NULL) st.push(curr), curr=curr->left;
+        else{
+            if(!st.empty()){
+                curr=st.top();
+                int t = curr->val;
+                if(hash[t] == 0) hash[B-t] = 1;
+                else return 1;
+                st.pop();
+                curr=curr->right;
+            } 
+            else done = 1;
+        }
+    }
+   return 0;
 }
 
