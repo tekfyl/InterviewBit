@@ -21,9 +21,7 @@ Input:
 
 A :  list of positions of mice
 B :  list of positions of holes
-Output:
-
-single integer value
+Output: Single integer value
  NOTE: The final answer will fit in a 32 bit signed integer. 
 
 int Solution::mice(vector<int> &A, vector<int> &B) {
