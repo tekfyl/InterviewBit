@@ -61,4 +61,3 @@ int Solution::black(vector<string> &A) {
     }
     return count;
 }
-
